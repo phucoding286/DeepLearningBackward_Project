@@ -1,6 +1,7 @@
 import pyopencl as cl
 import numpy as np
 import os
+os.environ["PYOPENCL_COMPILER_OUTPUT"] = "1"
 
 platform = cl.get_platforms()[0]
 device = platform.get_devices()[0]
@@ -75,7 +76,6 @@ def matmulGPU(A, B):
         print("tính toán trên CPU")
         return np.matmul(A, B)
     
-# A = np.random.rand(2, 3, 6, 3).astype(np.float64)
-# B = np.random.rand(2, 3, 3, 6).astype(np.float64)
-# print(matmulGPU(A, B))
-# print(np.matmul(A, B))
+A = np.random.rand(2, 3).astype(np.float64)
+B = np.random.rand(3, 4).astype(np.float64)
+print(matmulGPU(A, B))

@@ -1,5 +1,7 @@
 import numpy as np
-from matmul_gpu import matmulGPU # dùng opencl hổ trợ gpu tích hợp
+from matmul_gpu import matmulGPU, cl # dùng opencl hổ trợ gpu tích hợp
+import matmul_gpu
+matmul_gpu.device = cl.get_platforms()[0].get_devices[0] # chọn gpu/cpu
 
 class ActivationFunction:
     def __init__(self):
