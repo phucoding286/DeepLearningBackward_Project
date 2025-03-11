@@ -75,7 +75,8 @@ def matmulGPU(A, B):
     else:
         print("tính toán trên CPU")
         return np.matmul(A, B)
-    
-A = np.random.rand(2, 3).astype(np.float64)
-B = np.random.rand(3, 4).astype(np.float64)
-print(matmulGPU(A, B))
+
+if __name__ == "__main__":
+    A = np.random.rand(2, 3).astype(np.float64)
+    B = np.random.rand(3, 4).astype(np.float64)
+    print(matmulGPU(A, B))
